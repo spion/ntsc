@@ -1,0 +1,16 @@
+{
+  "name": "ntsc",
+  "version": "0.1.0",
+  "description": "Compile commonjs modules with TypeScript",
+  "main": "index.js",
+  "bin": "bin/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^0.9.7",
+    "optimist": "^0.6.1"
+  }
+}
