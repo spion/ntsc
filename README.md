@@ -15,7 +15,7 @@ file going up in the directory hierarchy. For example, if you write
 ntsc will look for src/references.d.ts, references.d.ts, ../references.d.ts and
 so on until it finds one, and will transform the command into
 
-    tsc --nolib ecma.d.ts references.d.ts src/*.ts --outDir js
+    tsc --nolib references.d.ts src/*.ts --outDir js
 
 which should hopefully result with fast compilation times
 

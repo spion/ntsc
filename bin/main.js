@@ -6,7 +6,8 @@ var cp   = require('child_process');
 
 
 function containsReferences(dir) {
-    return fs.existsSync(path.resolve(dir, 'references.d.ts'))
+    var tried = fs.existsSync(path.resolve(dir, 'references.d.ts'))
+    return tried;
 }
 
 function findReferences(firstDir) {
@@ -52,10 +53,11 @@ function main(args) {
         return res.concat(keyVal(args, key));
     }, [])
     tsArgs.push('--nolib');
-    tsArgs.push(path.resolve(__dirname, '../ecma.d.ts'));
-    tsArgs.push(path.resolve(firstDir, 'references.d.ts'));
+    //tsArgs.push(path.resolve(__dirname, '../ecma.d.ts'));
+    tsArgs.push(path.resolve(refDir, 'references.d.ts'));
     tsArgs = tsArgs.concat(args._);
 
+    //console.log(tsBin, tsArgs.join(' '));
     var child = cp.spawn(tsBin, tsArgs)
 
     process.stdin.pipe(child.stdin);
